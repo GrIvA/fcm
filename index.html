@@ -78,7 +78,7 @@
 <script>
 var messaging = firebase.messaging();
 
-navigator.serviceWorker.register('fcm/firebase-messaging-sw.js')
+navigator.serviceWorker.register('firebase-messaging-sw.js')
     .then(function(registration) {
         console.log("--- Ssuccessful registration ---\n", registration);
         messaging.useServiceWorker($registration);
