@@ -88,7 +88,7 @@ navigator.serviceWorker.register('firebase-messaging-sw.js')
                 console.log('--- Have permission ---');
                 return messaging.getToken();
             })
-            .then(function(token) { console.log("--- token --\n-", token); })
+            .then(function(token) { console.log("--- token ---\n", token); })
             .catch(function(err) {
                 console.log("=== Error get permission ===\n", err);
             });
