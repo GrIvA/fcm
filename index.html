@@ -73,22 +73,30 @@
     measurementId: "G-K41F8XVSQF"
   };
   firebase.initializeApp(firebaseConfig);
-  firebase.messaging().useServiceWorker('fcm/firebase-messaging-sw.js')
 </script>
 
 <script>
 var messaging = firebase.messaging();
 
-messaging.requestPermission()
-    .then(function() {
-        console.log('--- Have permission ---');
-        return messaging.getToken();
-    })
-    .then(function(token) { console.log("--- token --\n-", token); })
-    .catch(function(err) {
-        console.log("=== Error get permission ===\n", err);
-    });
+navigator.serviceWorker.register('fcm/firebase-messaging-sw.js')
+    .then(function(registration) {
+        console.log("--- Ssuccessful registration ---\n", registration);
+        messaging.useServiceWorker($registration);
+
+        messaging.requestPermission()
+            .then(function() {
+                console.log('--- Have permission ---');
+                return messaging.getToken();
+            })
+            .then(function(token) { console.log("--- token --\n-", token); })
+            .catch(function(err) {
+                console.log("=== Error get permission ===\n", err);
+            });
     
+
+
+    });
+
 
 
 </script>
