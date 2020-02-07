@@ -80,7 +80,7 @@ var messaging = firebase.messaging();
 
 navigator.serviceWorker.register('firebase-messaging-sw.js')
     .then(function(registration) {
-        console.log("--- Ssuccessful registration ---\n", registration);
+        console.log("--- Ssuccessful registration ---");
         messaging.useServiceWorker(registration);
 
         messaging.requestPermission()
