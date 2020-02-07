@@ -93,6 +93,9 @@ navigator.serviceWorker.register('firebase-messaging-sw.js')
                 console.log("=== Error get permission ===\n", err);
             });
     
+        messaging.onMessage(function(payload) {
+            console.log('Message: ', payload);
+        });
 
 
     });
