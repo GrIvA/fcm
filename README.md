@@ -1,3 +1,3 @@
-s is just test porject for leaning firebase cloud messaging notification mechanism
+It is just leaning firebase cloud test porject for messaging notification mechanism
 
 use link https://griva.github.io/fcm/
